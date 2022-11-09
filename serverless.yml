@@ -1,0 +1,16 @@
+# serverless.yml
+ 
+service: service-user-auth
+ 
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: us-east-1
+ 
+functions:
+  app:
+    handler: src/index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'

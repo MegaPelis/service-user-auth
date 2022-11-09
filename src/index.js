@@ -11,6 +11,6 @@ db.connect();
 
 if (config.LOCAL !== false) {
     app.listen(port, () => console.log('Server running:', port));
-} else {
-    module.exports.handler = serverless(app);
 }
+
+module.exports.handler = serverless(app);

@@ -4,6 +4,7 @@ const YAML = require("yamljs");
 const express = require("express");
 const config = require("./config/config");
 const cors = require("cors");
+const morgan = require('morgan');
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(cors());
 app.use(express.json())
 // app.use();
 
-//app.use(morgan("dev"));
+app.use(morgan("dev"));
 
 // rutas
 // const swaggerDocument = YAML.load("./docs/swagger.yaml");
